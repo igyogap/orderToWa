@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Login Template</title>
+  <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/login.css">
+</head>
+
+<body>
+  <main class="d-flex align-items-center min-vh-100 py-3 py-md-0">
+    <div class="container">
+      <div class="card login-card">
+        <div class="row no-gutters">
+          <div class="col-md-5">
+            <img src="assets/images/login.jpg" alt="login" class="login-card-img">
+          </div>
+          <div class="col-md-7">
+            <div class="card-body">
+              <div class="brand-wrapper">
+                <img src="assets/images/logo.svg" alt="logo" class="logo">
+              </div>
+              <p class="login-card-description">Format Order</p>
+              <form action="#!">
+                <div class="form-group">
+                  <label for="ukuran" class="sr-only">Ukuran Cake</label>
+                  <input type="text" name="ukuran" id="ukuran" class="form-control"
+                    placeholder="ukuran cake 15, 16, 18, 20">
+                </div>
+                <div class="form-group">
+                  <label for="base-cake" class="sr-only">Base Cake</label>
+                  <input type="text" name="base-cake" id="base-cake" class="form-control" placeholder="Base Cake">
+                </div>
+                <div class="form-group">
+                  <label for="tulisan" class="sr-only">Tulisan</label>
+                  <input type="text" name="tulisan" id="tulisan" class="form-control"
+                    placeholder="Masukan tulisan di kue">
+                </div>
+                <div class="form-group">
+                  <label for="request" class="sr-only">request</label>
+                  <input type="text" name="request" id="request" class="form-control"
+                    placeholder="Masukan request jika ada">
+                </div>
+                <div class="form-group">
+                  <label for="date" class="sr-only">Tanggal Pengambilan</label>
+                  <input type="datetime-local" name="date" id="date" class="form-control"
+                    placeholder="Masukan Tanggal Pengambilan">
+                </div>
+
+                <input name="login" id="login" class="btn btn-block login-btn mb-4" type="submit" value="Pesan"
+                  onclick="goToWa()">
+              </form>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+  <script>
+    function goToWa() {
+      var ukuran = document.getElementById("ukuran").value;
+      var base = document.getElementById("base-cake").value;
+      var tulisan = document.getElementById("tulisan").value;
+      var request = document.getElementById("request").value;
+      var date = document.getElementById("date").value;
+
+      var url = "http://wa.me/+6287861221154/?text=" +
+        "Ukuran : " + ukuran + "%0a" +
+        "Base Cake : " + base + "%0a" +
+        "Tulisan : " + tulisan + "%0a" +
+        "Request : " + request + "%0a" +
+        "Tanggal Pengambilan : " + date
+
+      window.open(url, "_blank").focus();
+    }
+  </script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
